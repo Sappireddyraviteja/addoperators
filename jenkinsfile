@@ -1,0 +1,71 @@
+pipeline {
+
+    agent any
+
+    stages {
+        
+       
+
+//         stage('Code Checkout') {
+//             steps {
+//                 checkout([
+//                     $class: 'GitSCM', 
+//                     branches: [[name: '*/master']], 
+//                     userRemoteConfigs: [[https://github.com/Sappireddyraviteja/addoperators.git]]
+//                 ])
+//             }
+//         }
+
+//         stage('SCM') {
+//             steps{
+//                 checkout scm
+//             }
+//   }
+
+        stage('Build  Code') {
+//             when {
+//                 branch 'develop'
+//             }
+            steps {
+                bat 'g++ main.cpp -o a.exe'
+                bat 'a.exe'
+
+//                 bat 'echo Deploying'
+//                 bat 'echo web-hook working'
+            }
+        }
+   
+      
+//          stage(' Unit Testing') {
+//             steps {
+//                 bat 'echo Running Unit Tests'
+               
+//         }
+ 
+  stage('SonarQube Analysis') {
+      steps{
+//           scannerHome = tool 'Qube';
+//           withSonarQubeEnv() {
+//           bat '${scannerHome}/bin/sonar-scanner'}
+          bat 'echo Running Code Analysis'
+    }
+    }
+  }
+
+
+//         stage('Code Analysis') {
+//             steps {
+//                 bat 'echo Running Code Analysis'
+//             }
+//         }
+
+    
+    post{
+        //cleanWs(cleanWhenNotBuilt: false)
+        always{
+            mail to: "sapireddyteja@gmail.com",
+            subject: "Test Email",
+            body: " The wehook is working fine"
+        }
+    }
+}
