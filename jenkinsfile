@@ -24,7 +24,7 @@ pipeline {
 
         stage('Build  Code') {
 //             when {
-//                 branch 'develop'
+//                 branch 'master'
 //             }
             steps {
                 sh 'g++ abc.cpp -o abc'
