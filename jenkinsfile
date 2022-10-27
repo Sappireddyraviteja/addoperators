@@ -61,7 +61,12 @@ pipeline {
 
     
     post{
+    stage('post checks'){
+    steps{
     sh 'echo success'
+    }
+}
+    
         //cleanWs(cleanWhenNotBuilt: false)
      //   always{
        //     mail to: "sapireddyteja@gmail.com",
