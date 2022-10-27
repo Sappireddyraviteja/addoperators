@@ -60,12 +60,13 @@ pipeline {
 //         }
 
     
-   // post{
+    post{
+    sh 'echo success'
         //cleanWs(cleanWhenNotBuilt: false)
      //   always{
        //     mail to: "sapireddyteja@gmail.com",
          //   subject: "Test Email",
            // body: " The wehook is working fine"
         //}
-    //}
+    }
 }
