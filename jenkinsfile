@@ -60,12 +60,8 @@ pipeline {
 //         }
 
     
-    post{
-    stage('post checks'){
-    steps{
-    sh 'echo success'
-    }
-}
+   // post{
+   
     
         //cleanWs(cleanWhenNotBuilt: false)
      //   always{
@@ -73,5 +69,5 @@ pipeline {
          //   subject: "Test Email",
            // body: " The wehook is working fine"
         //}
-    }
+   // }
 }
