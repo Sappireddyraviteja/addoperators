@@ -28,7 +28,7 @@ pipeline {
 //             }
             steps {
                 sh 'g++ abc.cpp -o abc'
-                sh 'abc'
+                sh './abc'
 
 //                 sh 'echo Deploying'
 //                 sh 'echo web-hook working'
