@@ -30,8 +30,8 @@ pipeline {
                 sh 'g++ abc.cpp -o abc'
                 sh 'abc'
 
-//                 bat 'echo Deploying'
-//                 bat 'echo web-hook working'
+//                 sh 'echo Deploying'
+//                 sh 'echo web-hook working'
             }
         }
    
