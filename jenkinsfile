@@ -27,8 +27,8 @@ pipeline {
 //                 branch 'develop'
 //             }
             steps {
-                bat 'g++ main.cpp -o a.exe'
-                bat 'a.exe'
+                sh 'g++ abc.cpp -o abc'
+                sh 'abc'
 
 //                 bat 'echo Deploying'
 //                 bat 'echo web-hook working'
@@ -38,7 +38,7 @@ pipeline {
       
 //          stage(' Unit Testing') {
 //             steps {
-//                 bat 'echo Running Unit Tests'
+//                 sh 'echo Running Unit Tests'
                
 //         }
  
@@ -46,8 +46,8 @@ pipeline {
       steps{
 //           scannerHome = tool 'Qube';
 //           withSonarQubeEnv() {
-//           bat '${scannerHome}/bin/sonar-scanner'}
-          bat 'echo Running Code Analysis'
+//           sh '${scannerHome}/bin/sonar-scanner'}
+          sh 'echo Running Code Analysis'
     }
     }
   }
@@ -55,7 +55,7 @@ pipeline {
 
 //         stage('Code Analysis') {
 //             steps {
-//                 bat 'echo Running Code Analysis'
+//                 sh 'echo Running Code Analysis'
 //             }
 //         }
 
