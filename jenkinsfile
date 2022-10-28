@@ -49,7 +49,6 @@ pipeline {
   }
  }  
  post {
-        success {...}
-        failure {...}
+        sh 'echo succ'
     }
 }
