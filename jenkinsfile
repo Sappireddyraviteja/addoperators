@@ -44,35 +44,12 @@ pipeline {
  
   stage('SonarQube Analysis') {
       steps{
-//           scannerHome = tool 'Qube';
-//           withSonarQubeEnv() {
-//           sh '${scannerHome}/bin/sonar-scanner'}
           sh 'echo Running Code Analysis'
     }
-    }
   }
-  
-  post {
+ }  
+ post {
         success {...}
         failure {...}
     }
-
-
-//         stage('Code Analysis') {
-//             steps {
-//                 sh 'echo Running Code Analysis'
-//             }
-//         }
-
-    
-   // post{
-   
-    
-        //cleanWs(cleanWhenNotBuilt: false)
-     //   always{
-       //     mail to: "sapireddyteja@gmail.com",
-         //   subject: "Test Email",
-           // body: " The wehook is working fine"
-        //}
-   // }
 }
