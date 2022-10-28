@@ -51,6 +51,11 @@ pipeline {
     }
     }
   }
+  
+  post {
+        success {...}
+        failure {...}
+    }
 
 
 //         stage('Code Analysis') {
