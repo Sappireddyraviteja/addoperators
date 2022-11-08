@@ -43,14 +43,24 @@ pipeline {
 //         }
  
   stage('SonarQube Analysis') {
-    def scannerHome = tool 'SonarScanner';
-    withSonarQubeEnv() {
-      sh "${scannerHome}/bin/sonar-scanner"
+      steps{
+//           scannerHome = tool 'Qube';
+//           withSonarQubeEnv() {
+//           sh '${scannerHome}/bin/sonar-scanner'}
+          sh 'echo Running Code Analysis'
+    }
     }
   }
-    }
-  }  
- post {
+
+
+//         stage('Code Analysis') {
+//             steps {
+//                 sh 'echo Running Code Analysis'
+//             }
+//         }
+
+    
+    post {
         always {
             echo "This block always runs."
         }
@@ -82,3 +92,4 @@ pipeline {
             echo "This block always runs after other conditions are evaluated."
         }
     }
+}
