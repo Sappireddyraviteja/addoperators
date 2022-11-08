@@ -49,8 +49,7 @@ pipeline {
     }
   }
     }
-  }
- }  
+  }  
  post {
         always {
             echo "This block always runs."
