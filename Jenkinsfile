@@ -9,8 +9,8 @@ pipeline {
          stage('Code Checkout') {
              steps {
                  checkout([
-                     $class: 'GitSCM', 
-                     branches: [[name: '*/master']], 
+                     $class: 'GitSCM'
+                     branches: [[name: '*/master']]
                      userRemoteConfigs: [[https://github.com/Sappireddyraviteja/addoperators.git]])
              }
          }
