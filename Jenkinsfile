@@ -6,26 +6,26 @@ pipeline {
         
        
 
-//         stage('Code Checkout') {
-//             steps {
-//                 checkout([
-//                     $class: 'GitSCM', 
-//                     branches: [[name: '*/master']], 
-//                     userRemoteConfigs: [[https://github.com/Sappireddyraviteja/addoperators.git]]
-//                 ])
-//             }
-//         }
+         stage('Code Checkout') {
+             steps {
+                 checkout([
+                     $class: 'GitSCM', 
+                     branches: [[name: '*/master']], 
+                     userRemoteConfigs: [[https://github.com/Sappireddyraviteja/addoperators.git]]
+                 ])
+             }
+         }
 
-//         stage('SCM') {
-//             steps{
-//                 checkout scm
-//             }
-//   }
+         stage('SCM') {
+             steps{
+                 checkout scm
+             }
+   }
 
         stage('Build  Code') {
-//             when {
-//                 branch 'develop'
-//             }
+             when {
+                 branch 'develop'
+             }
             steps {
                 sh 'g++ abc.cpp -o abc'
                 sh 'abc'
@@ -44,9 +44,9 @@ pipeline {
  
   stage('SonarQube Analysis') {
       steps{
-//           scannerHome = tool 'Qube';
-//           withSonarQubeEnv() {
-//           sh '${scannerHome}/bin/sonar-scanner'}
+           scannerHome = tool 'Qube';
+           withSonarQubeEnv() {
+           sh '${scannerHome}/bin/sonar-scanner'}
           sh 'echo Running Code Analysis'
     }
     }
