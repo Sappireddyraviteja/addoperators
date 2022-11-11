@@ -30,7 +30,7 @@ pipeline {
                 sh './abc'
 
                  sh 'echo Deploying'
-                 sh 'echo web-hook working'
+                 //sh 'echo web-hook working'
             }
         }
    
@@ -44,10 +44,15 @@ pipeline {
   stage('SonarQube Analysis') {
       steps{
            def scannerHome = tool 'sonarqube';
-         withSonarQubeEnv('sonarqube') {
-         sh 'mvn clean package sonar:sonar'
-         sh '${scannerHome}/bin/sonar-scanner'}
-         sh 'echo Running Code Analysis'
+           withSonarQubeEnv('sonarqube') {
+           sh 'mvn clean package sonar:sonar'
+           sh '${scannerHome}/bin/sonar-scanner'}
+           -D sonar.login=admin \
+           -D sonar.password=admin \
+           -D sonar.projectkey=sonarqubetest \
+           -D sonar.exclusions=vendor/**,resources/**,**/*.C++ \
+           -D sonar.host.url=http://65.2.130.29:9000/
+           sh 'echo Running Code Analysis'
     }
     }
   }
