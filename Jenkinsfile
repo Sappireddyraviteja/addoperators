@@ -3,17 +3,7 @@ pipeline {
     agent any
 
     stages {
-        
-       
-
-         stage('Code Checkout') {
-             steps {
-                 checkout([
-                     $class: 'GitSCM'
-                     branches: [[name: '*/master']]
-                     userRemoteConfigs: [[https://github.com/Sappireddyraviteja/addoperators.git]])
-             }
-         }
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Sappireddyraviteja/addoperators.git']]])
 
          stage('SCM') {
              steps{
