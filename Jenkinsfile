@@ -11,8 +11,7 @@ pipeline {
                  checkout([
                      $class: 'GitSCM', 
                      branches: [[name: '*/master']], 
-                     userRemoteConfigs: [[https://github.com/Sappireddyraviteja/addoperators.git]]
-                 ])
+                     userRemoteConfigs: [[https://github.com/Sappireddyraviteja/addoperators.git]]])
              }
          }
 
