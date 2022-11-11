@@ -37,10 +37,7 @@ pipeline {
            withSonarQubeEnv('sonarqube') {
            sh 'mvn clean package sonar:sonar'
            sh '${scannerHome}/bin/sonar-scanner'}
-           -D sonar.projectkey=sonarqubetest \
-           -D sonar.exclusions=vendor/**,resources/**,**/*.C++ \
-           -D sonar.host.url=http://65.2.130.29:9000/
-            sh 'echo Running Code Analysis'
+           sh 'echo Running Code Analysis'
     }
     }
   }
