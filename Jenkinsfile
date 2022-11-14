@@ -28,6 +28,7 @@ pipeline {
 //             }
             steps {
                 sh 'g++ abc.cpp -o abc'
+                sh './abc'
                 sh 'abc'
 
 //                 bat 'echo Deploying'
