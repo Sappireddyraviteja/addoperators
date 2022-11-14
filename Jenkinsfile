@@ -61,7 +61,7 @@ pipeline {
 
     
     post{
-        cleanWs(cleanWhenNotBuilt: false)
+        //cleanWs(cleanWhenNotBuilt: false)
         always{
             mail to: "sapireddyteja@gmail.com",
             subject: "Test Email",
