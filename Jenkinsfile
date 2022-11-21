@@ -27,7 +27,7 @@ pipeline {
 //                 branch 'master'
 //             }
             steps {
-                sh '-o abc source.cpp
+                sh 'abc.cpp -o abc.cpp'
                 sh './abc'
 
 //                 bat 'echo Deploying'
