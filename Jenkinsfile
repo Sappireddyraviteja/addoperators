@@ -27,8 +27,8 @@ pipeline {
 //                 branch 'master'
 //             }
             steps {
-                sh 'g++ abc.cpp'
-                sh './a.out'
+                sh '-o abc source.cpp
+                sh './abc'
 
 //                 bat 'echo Deploying'
 //                 bat 'echo web-hook working'
